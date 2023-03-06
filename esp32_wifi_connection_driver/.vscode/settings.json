@@ -1,0 +1,24 @@
+{
+    "C_Cpp.intelliSenseEngine": "default",
+    "idf.adapterTargetName": "esp32",
+    "idf.customExtraPaths": "/home/jawad/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin:/home/jawad/.espressif/tools/xtensa-esp32s2-elf/esp-2020r2-8.2.0/xtensa-esp32s2-elf/bin:/home/jawad/.espressif/tools/esp32ulp-elf/2.28.51-esp-20191205/esp32ulp-elf-binutils/bin:/home/jawad/.espressif/tools/esp32s2ulp-elf/2.28.51-esp-20191205/esp32s2ulp-elf-binutils/bin:/home/jawad/.espressif/tools/cmake/3.13.4/bin:/home/jawad/.espressif/tools/openocd-esp32/v0.10.0-esp32-20191114/openocd-esp32/bin:/home/jawad/.espressif/tools/ninja/1.9.0",
+    "idf.customExtraVars": "{\"OPENOCD_SCRIPTS\":\"/home/jawad/.espressif/tools/openocd-esp32/v0.10.0-esp32-20191114/openocd-esp32/share/openocd/scripts\"}",
+    "idf.espIdfPath": "/home/jawad/esp32/esp-idf",
+    "idf.openOcdConfigs": [
+        "interface/ftdi/esp32_devkitj_v1.cfg",
+        "target/esp32.cfg"
+    ],
+    "idf.port": "/dev/ttyUSB0",
+    "idf.pythonBinPath": "/home/jawad/.espressif/python_env/idf4.1_py3.6_env/bin/python",
+    "idf.toolsPath": "/home/jawad/.espressif",
+    "python.autoComplete.extraPaths": [
+        "/opt/ros/melodic/lib/python2.7/dist-packages"
+    ],
+    "files.associations": {
+        "protocol_examples_common.h": "c",
+        "esp_netif.h": "c",
+        "esp_log.h": "c",
+        "esp_wifi.h": "c"
+    },
+    "idf.flashType": "JTAG"
+}

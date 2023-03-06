@@ -1,0 +1,53 @@
+// ESP-32 Internet
+// Connect to Internet
+// Read HTML of Google.com
+
+#include <stdio.h>
+#include "protocol_examples_common.h"
+#include "esp_wifi.h"
+#include "esp_event.h"
+#include "esp_http_client.h"
+#include "nvs_flash.h"
+
+esp_err_t clientEvent(esp_http_client_event_t *evt)
+{
+  
+     switch(evt->event_id) {
+        case HTTP_EVENT_ON_DATA:
+             printf("%.*s\n", evt->data_len, (char*)evt->data);
+        default:
+            break;
+    }
+    return ESP_OK;
+}
+
+
+int app_main(void)
+{
+    //printf("Hello WIFI Code \n");
+
+    // initialize nvs
+    nvs_flash_init();
+
+    // initialize tcp/ip adapter
+    esp_netif_init();
+
+    // 
+    esp_event_loop_create_default();
+    
+    // connect to internet
+    example_connect();
+
+
+    // get the HTML content
+    esp_http_client_config_t clientConfig = {
+        .url = "http://google.com",
+        .event_handler = clientEvent
+    };
+
+    esp_http_client_handle_t client = esp_http_client_init(&clientConfig);
+    esp_http_client_perform(client);
+    esp_http_client_cleanup(client);
+
+    return 0;
+}

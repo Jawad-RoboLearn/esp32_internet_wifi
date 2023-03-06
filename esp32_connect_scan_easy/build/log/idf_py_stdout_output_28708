@@ -1,0 +1,41 @@
+[1/10] Performing build step for 'bootloader'
+[1/1] cd /home/jawad/esp_projects/esp32_internet_wifi/build/bootloader/esp-idf/esptool_py && /home/jawad/.espressif/python_env/idf5.1_py3.9_env/bin/python /home/jawad/esp32/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /home/jawad/esp_projects/esp32_internet_wifi/build/bootloader/bootloader.bin
+Bootloader binary size 0x6740 bytes. 0x8c0 bytes (8%) free.
+[2/8] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/internet_main.c.obj
+/home/jawad/esp_projects/esp32_internet_wifi/main/internet_main.c: In function 'print_time':
+/home/jawad/esp_projects/esp32_internet_wifi/main/internet_main.c:19:37: warning: passing argument 1 of 'localtime' from incompatible pointer type [-Wincompatible-pointer-types]
+   19 |     struct tm *timeinfo = localtime(&time);
+      |                                     ^~~~~
+      |                                     |
+      |                                     long int *
+In file included from /home/jawad/esp32/esp-idf/components/newlib/platform_include/time.h:11,
+                 from /home/jawad/esp_projects/esp32_internet_wifi/main/internet_main.c:3:
+/home/jawad/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/sys-include/time.h:64:37: note: expected 'const time_t *' {aka 'const long long int *'} but argument is of type 'long int *'
+   64 | struct tm *localtime (const time_t *_timer);
+      |                       ~~~~~~~~~~~~~~^~~~~~
+/home/jawad/esp_projects/esp32_internet_wifi/main/internet_main.c: In function 'sntp_fcn':
+/home/jawad/esp_projects/esp32_internet_wifi/main/internet_main.c:45:5: warning: 'sntp_setservername' is deprecated: use esp_sntp_setservername() instead [-Wdeprecated-declarations]
+   45 |     sntp_setservername(0, "pool.ntp.org");
+      |     ^~~~~~~~~~~~~~~~~~
+In file included from /home/jawad/esp_projects/esp32_internet_wifi/main/internet_main.c:4:
+/home/jawad/esp32/esp-idf/components/lwip/include/apps/esp_sntp.h:243:6: note: declared here
+  243 | void sntp_setservername(u8_t idx, const char *server)
+      |      ^~~~~~~~~~~~~~~~~~
+/home/jawad/esp_projects/esp32_internet_wifi/main/internet_main.c:46:5: warning: 'sntp_init' is deprecated: use esp_sntp_init() instead [-Wdeprecated-declarations]
+   46 |     sntp_init();
+      |     ^~~~~~~~~
+/home/jawad/esp32/esp-idf/components/lwip/include/apps/esp_sntp.h:249:6: note: declared here
+  249 | void sntp_init(void)
+      |      ^~~~~~~~~
+[3/8] Linking C static library esp-idf/main/libmain.a
+[4/8] Generating ld/sections.ld
+[5/8] Building C object CMakeFiles/project-name.elf.dir/project_elf_src_esp32.c.obj
+[6/8] Linking CXX executable project-name.elf
+[7/8] Generating binary image from built executable
+esptool.py v4.5.1
+Creating esp32 image...
+Merged 25 ELF sections
+Successfully created esp32 image.
+Generated /home/jawad/esp_projects/esp32_internet_wifi/build/project-name.bin
+[8/8] cd /home/jawad/esp_projects/esp32_internet_wifi/build/esp-idf/esptool_py && /home/jawad/.espressif/python_env/idf5.1_py3.9_env/bin/python /home/jawad/esp32/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/jawad/esp_projects/esp32_internet_wifi/build/partition_table/partition-table.bin /home/jawad/esp_projects/esp32_internet_wifi/build/project-name.bin
+project-name.bin binary size 0xbde60 bytes. Smallest app partition is 0x100000 bytes. 0x421a0 bytes (26%) free.
